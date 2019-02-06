@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    background-color: #effff6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.navbar{
+    
+    background-color: #78CAA7;
+    color: white;
+
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    font-size: 2.5rem;
+
+    box-shadow: 1px 1px 29px #438e64;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #32a367;
+    border-radius: 5px;
+
+    background-color: snow;
+
+    margin: 10rem auto;
+
+    padding: 5rem;
+}
+
+.container__list{
+    list-style: none;
+}
+
+.joke{
+    width: 28rem;
+    visibility: hidden;
+}
+
+.container__list-link::before{
+    content: "• ";
+    color: #438e64;
+    font-size: 1.5rem;
+}
+
+.container__list-link{
+    margin: 1rem;
+}
+
+
+.container__list-link > a{
+    text-decoration: none;
+    
+    font-size: 1.5rem;
+    
+    color: #438e64;
+    
+    transition: all .3s;
+    backface-visibility: hidden;
+}
+.container__list-link > a:hover{
+    color: #0e551a;        
+    font-size: 1.52rem;
+    text-shadow: 1px 4px 3px #5b3470;
+}
+
+.popup{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    background-size: cover;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__content{
+    width: 70%;
+    height: 50rem;
+    padding: 2rem;
+
+    background-color: azure;
+
+    position: absolute;
+    top: 15%;
+    left: 15%;
+
+    border-radius: 5px;
+}
+.popup__content-heading{
+    
+    font-size: 2rem;
+}
+
+.popup__content-text{
+    font-size: 1.6rem;
+
+    width: 90%;
+    margin: 1rem;
+}
+
+.popup__content-function{
+    width: 35rem;
+    margin: 5rem auto;
+    border: 1.5px solid #275643;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    align-items: flex-start;
+
+    padding: 2rem;
+
+    background-color: azure;
+}
+
+.popup__content-function-input{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.popup__content-function-input-choice{
+    margin-bottom: 3rem;
+}
+
+.popup__content-function-input-choice > label{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+.popup__content-function-input > input{
+    border: none;
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: .5rem;
+    width: 75%;
+}
+
+.popup__content-function-input > input:focus{
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .1);
+    border-bottom: 3px solid #438e64;
+}
+
+
+.popup__content-function-btn{
+    border: .8px solid #275643;
+    padding: .5rem;
+    background-color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-radius: 3px;
+    color: #275643;
+
+    transition: all .3s;
+    backface-visibility: hidden;
+}
+
+.popup__content-function-btn:hover{
+    box-shadow: 0 1rem 1rem rgba(0,0,0, .1);
+
+    transform: translateY(-1.5px);
+}
+.popup__content-function-btn:focus{
+    outline:0;
+}
+.popup__content-function-btn:active{
+    transform: translateY(0px);
+    outline:0;
+}
+.popup__content-function-result{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #438e64;
+}
+
+.popup__close{
+    position: absolute;
+    top: 11rem;
+    right: 21.5rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 3.3rem;
+    color: #999;
+
+    z-index: 9999;
+}
+
+.palindromeResult{
+    font-size: 1rem;
+    color: #32a367;
+    margin-left: .5rem;
+}
+
+.popup__content-function-input-registerSpcl{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.popup__content-function-input-registerSpcl > input{
+    width: 30%;
+
+    border: none;
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 2rem;
+}

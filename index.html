@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>FreeCodeCamp Javascript DataStructure and Algorithm</title>
+</head>
+<body >
+    <nav class="navbar">
+        <span class="navbar__title">FreeCodeCamp Javascript Algorithm and Data Structure Projects</span>
+    </nav>
+
+    <div class="container" id="home">
+        <ul class="container__list">
+            <div class="joke">Text to stabilise container.</div>
+            
+            <li class="container__list-link">
+                <a href="#popup-palindrome">Palindrome Checker</a>
+            </li>
+
+            <li class="container__list-link">
+                <a href="#popup-roman">Roman Numeral Converter</a>
+            </li>
+
+            <li class="container__list-link">
+                <a href="#popup-cipher">Caesars Cipher</a>
+            </li>
+
+            <li class="container__list-link">
+                <a href="#popup-telephone">Telephone Number Validator</a>
+            </li>
+
+            <li class="container__list-link">
+                <a href="#popup-cash">Cash Register</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="fcc" style="width:25rem; margin:5rem auto; font-size:1.2rem;">
+        <span>Check out FreeCodeCamp <a href="https://learn.freecodecamp.org/" target="_blank">curriculum</a>.</span>
+    </div>
+
+    <div class="popup" id="popup-palindrome">
+        <a href="#home" class="popup__close">×</a>
+        <div class="popup__content">
+            <h3 class="popup__content-heading">Instructions:</h3>
+            <div class="popup__content-text">
+                A palindrome is a word or sentence that's spelled the same way both forward and backward,
+                 ignoring punctuation, case, and spacing. All non-alphanumeric characters (punctuation, spaces and symbols) are removed and 
+                 everything is turned into the same case (lower or upper case) in order to check for palindromes.
+            </div>
+
+            <div class="popup__content-function">
+                <div class="popup__content-function-input">
+                        <input type="text" placeholder="Enter Pattern" id="palindromeInput">
+                        <button class="popup__content-function-btn" id="palindromeBtn">Check</button>
+                </div>
+                <div class="popup__content-function-result">
+                    Status:
+                    <span class="palindromeResult">
+                        Enter pattern and check for plaindrome!
+                    </span>
+                </div>
+            </div>
+            <div class="popup__content-function-note" style="position: relative;top:8rem;">
+                   Note: This took only 4 lines of code, have a <a class="popup__content-function-note-link" alt="github link" href="#">look</a>.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup" id="popup-roman">
+            <a href="#home" class="popup__close">×</a>
+            <div class="popup__content">
+                <h3 class="popup__content-heading">Instructions:</h3>
+                <div class="popup__content-text">
+                        Convert the given number into a roman numeral. Max roman numeral used was 3,999.
+                </div>
+    
+                <div class="popup__content-function">
+                    <div class="popup__content-function-input">
+                            <input type="text" placeholder="Enter Number" id="romanInput">
+                            <button class="popup__content-function-btn" style="margin-top:.5rem;" id="romanBtn">Convert</button>
+                    </div>
+                    <div class="popup__content-function-result">
+                        Status:
+                        <span class="romanResult">
+                            Enter numeric number of base-10 and convert to roman numeral!
+                        </span>
+                    </div>
+                </div>
+                <div class="popup__content-function-note" style="position: relative;top:8rem;">
+                       Note: Curious about what logic is used? Have a <a class="popup__content-function-note-link" alt="github link" href="#">look</a>.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popup" id="popup-cipher">
+                <a href="#home" class="popup__close">×</a>
+                <div class="popup__content">
+                    <h3 class="popup__content-heading">Instructions:</h3>
+                    <div class="popup__content-text">
+                            One of the simplest and most widely known ciphers is a Caesar cipher, 
+                            also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+                            A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. 
+                    </div>
+        
+                    <div class="popup__content-function">
+                        <div class="popup__content-function-input">
+                                <input type="text" placeholder="Enter String" id="cipherInput">
+                                <button class="popup__content-function-btn" style="margin-left:.5rem;" id="cipherBtn">Convert</button>
+                        </div>
+                        <div class="popup__content-function-input-choice">
+                                <input type="radio" id="toCipher" name="choice">
+                                <label for="toCipher">Convert to cipher!</label>
+
+                                <input type="radio" id="toEnglish" name="choice">
+                                <label for="toEnglish">Convert to english!</label>
+                        </div>
+                        <div class="popup__content-function-result">
+                            Status:
+                            <span class="ciphereResult">
+                                Enter numeric number of base-10 and convert to roman numeral!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="popup__content-function-note" style="position: relative;top:2rem;">
+                           Note: Curious about what logic is used? Have a <a class="popup__content-function-note-link" alt="github link" href="#">look</a>.
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="popup" id="popup-telephone">
+                    <a href="#home" class="popup__close">×</a>
+                    <div class="popup__content">
+                        <h3 class="popup__content-heading">Instructions:</h3>
+                        <div class="popup__content-text">
+                                The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):
+
+                                555-555-5555 ||
+                                (555)555-5555 ||
+                                (555) 555-5555 ||
+                                5555555555 ||
+                                1 555 555 5555
+                        </div>
+            
+                        <div class="popup__content-function">
+                            <div class="popup__content-function-input">
+                                    <input type="text" placeholder="Enter Pattern" id="telephoneInput">
+                                    <button class="popup__content-function-btn" id="telephoneBtn">Check</button>
+                            </div>
+                            <div class="popup__content-function-result">
+                                Status:
+                                <span class="telephoneResult">
+                                    Enter telephone number and check for validity!
+                                </span>
+                            </div>
+                        </div>
+                        <div class="popup__content-function-note" style="position: relative;top:12rem;">
+                               Note: This took only 4 lines of code, have a <a class="popup__content-function-note-link" alt="github link" href="#">look</a>.
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="popup" id="popup-cash">
+                        <a href="#home" class="popup__close" style="top: 2rem;">×</a>
+                        <div class="popup__content" style="height:98%;top: 3%;">
+                            <h3 class="popup__content-heading">Instructions:</h3>
+                            <div class="popup__content-text">
+                                    This is "cash register" where you load up the available cash, then input the cost and cash received, click on accept. Function will calculate and update the cash register.
+                                    Basic and lame logic it seems, can't help it. Have a look to FreeCodeCamp's page for this <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/cash-register/" target="_blank">problem</a>.
+                            </div>
+                
+                            <div class="popup__content-function">
+                                <div class="popup__content-function-input">
+                                        <input type="number" placeholder="Penny">
+                                        <input type="number" placeholder="Nickel">
+                                        <input type="number" placeholder="Dime">
+                                        <input type="number" placeholder="Quarter">
+                                        <input type="number" placeholder="One">
+                                        <input type="number" placeholder="Five">
+                                        <input type="number" placeholder="Ten">
+                                        <input type="number" placeholder="Twenty">
+                                        <input type="number" placeholder="One Hundred">
+                                </div>
+                                <div class="popup__content-function-input-registerSpcl">
+                                    <input type="number" placeholder="Cost">
+                                    <input type="number" placeholder="Received Amount">
+                                    <button class="popup__content-function-btn">Pay</button>
+                                </div>
+                                
+                                <div class="popup__content-function-result">
+                                    Status:
+                                    <span class="palindromeResult">
+                                        Store is open!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="popup__content-function-note" style="position: relative;top:-2rem;">
+                                    Note: Curious about what logic is used? Have a <a class="popup__content-function-note-link" alt="github link" href="#">look</a>.
+                            </div>
+                        </div>
+                    </div>
+</body>
+
+<script src="./scripts/cipher.js"></script>
+<script src="./scripts/palindrome-checker.js"></script>
+<script src="./scripts/roman.js"></script>
+<script src="./scripts/telephone-number-validator.js"></script>
+<script src="./scripts/cash-register.js"></script>
+</html>
