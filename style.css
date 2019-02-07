@@ -153,7 +153,9 @@ body{
 .popup__content-function-input-choice{
     margin-bottom: 3rem;
 }
-
+.popup__content-function-input-choice > *{
+    cursor: pointer;
+}
 .popup__content-function-input-choice > label{
     text-transform: uppercase;
     font-size: 1.2rem;

@@ -7,7 +7,7 @@ let valArr = {
   "FIVE":5,
   "TEN":10,
   "TWENTY":20,
-  "ONE HUNDRED":100
+  "HUNDRED":100
 };
 
 const keys = Object.keys(valArr);
@@ -28,9 +28,9 @@ function checkCashRegister(price, cash, cid) {
   //first checking for insufficient balance
   let sum =0;
   cid.forEach(arr => {
+
     sum = sum + arr[1];
   });
-
 
   if(sum < diff)
     return {status:"INSUFFICIENT_FUNDS",change:[]};
@@ -98,4 +98,45 @@ function checkCashRegister(price, cash, cid) {
 // ["TWENTY", 60],
 // ["ONE HUNDRED", 100]]
 
-checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+
+let cashDrawer = document.querySelectorAll('.cashDrawer');
+
+let cashArr = [];
+let cost, received;
+
+function main(){
+  cashArr = [];
+  cashDrawer[0].childNodes.forEach( pocket => {
+    if(pocket.type === 'number')
+      cashArr.push(parseInt(pocket.value));
+  });
+  
+  cost = document.querySelector('#registerInp1').value;
+  received = document.querySelector('#registerInp2').value;
+  
+  let res = checkCashRegister(cost, received, [["PENNY", 0.01 * cashArr[0]], ["NICKEL", 0.05 * cashArr[1]], ["DIME", 0.1 * cashArr[2]], ["QUARTER", 0.25 * cashArr[3]], ["ONE", cashArr[4]], ["FIVE", 5 * cashArr[5]], ["TEN", 10 * cashArr[6]], ["TWENTY", 20 * cashArr[7]], ["HUNDRED", 100 * cashArr[8]]]);
+
+  console.log(res)
+
+  if(res.status === "INSUFFICIENT_FUNDS")
+    document.querySelector('.registerResult').textContent = document.querySelector('.registerResult').textContent + " " +res.status + " Payment can't be accepted. Sorry!";
+  else if(res.status === "CLOSED"){
+    document.querySelector('.registerResult').textContent = "Store is closed! Payment accepted.";
+    cashDrawer[0].childNodes.forEach( pocket => pocket.type === 'number' ? pocket.value = 0 : '0' );
+    document.querySelector('#registerInp1').value = 0;
+    document.querySelector('#registerInp2').value = 0;
+  }
+  else{
+    document.querySelector('.registerResult').textContent = "Store is open! Payment accepted.";
+    console.log(res.change)
+    res.change.forEach(arr => {
+      document.querySelector(`#${arr[0]}`).value = parseInt(document.querySelector(`#${arr[0]}`).value) - arr[1] / valArr[`${arr[0]}`]
+    });
+    document.querySelector('#registerInp1').value = 0;
+    document.querySelector('#registerInp2').value = 0;
+  }
+ 
+}
+
+
+document.querySelector('#registerBtn').addEventListener('click', main);
