@@ -114,6 +114,11 @@ function main(){
   cost = document.querySelector('#registerInp1').value;
   received = document.querySelector('#registerInp2').value;
   
+  if(cost === ""){
+    document.querySelector('.registerResult').textContent = "Fillup the fields and then try!";
+    return;
+  }
+
   let res = checkCashRegister(cost, received, [["PENNY", 0.01 * cashArr[0]], ["NICKEL", 0.05 * cashArr[1]], ["DIME", 0.1 * cashArr[2]], ["QUARTER", 0.25 * cashArr[3]], ["ONE", cashArr[4]], ["FIVE", 5 * cashArr[5]], ["TEN", 10 * cashArr[6]], ["TWENTY", 20 * cashArr[7]], ["HUNDRED", 100 * cashArr[8]]]);
 
   console.log(res)
